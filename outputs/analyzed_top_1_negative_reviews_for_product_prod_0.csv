@@ -1,0 +1,2 @@
+review_text,rating,product_id,llm_sentiment,llm_topics,llm_actionable_insight
+This product is amazing! The battery life is incredible and the camera takes stunning photos.,5,prod_0,Positive,[],"No specific insight, review was positive."
