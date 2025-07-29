@@ -116,8 +116,6 @@ To set up and run this project locally:
 
 ## 📈 Results & Insights
 
-* **[INCLUDE SCREENSHOT/TABLE HERE: Add a small table or screenshot of aggregated sentiment analysis results from `outputs/analyzed_reviews.csv`]**
-* **[INCLUDE SCREENSHOT HERE: Add a screenshot of the single word cloud generated for the most reviewed product, highlighting common themes overall.]**
 * **Example Actionable Insights Generated:**
     * *Original Review:* "The phone's camera is amazing, but the battery dies too fast after the last update."
     * *AI Agent Insight:* **"Negative sentiment due to battery drain post-update. Action: Investigate recent software updates for battery optimization issues."**
