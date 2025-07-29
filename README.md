@@ -30,8 +30,6 @@ The core components include:
 * **Pandas:** For efficient data manipulation and analysis.
 * **Plotly Express / Matplotlib / Seaborn:** For interactive and static data visualization during EDA.
 * **WordCloud:** For generating visual representations of dominant words.
-* **n8n:** For building and orchestrating the automated workflow, demonstrating integration capabilities.
-* **Docker:** (Mention if you've containerized any part) For containerization, ensuring portability and reproducible environments.
 
 ## 💡 How It Works
 
