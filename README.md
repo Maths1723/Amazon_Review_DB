@@ -58,11 +58,8 @@ The project operates in several stages:
 .
 ├── data/
 │   └── amazon_product_reviews.csv  # Your dataset (or a sample)
-├── scripts/
-│   ├── eda_script.py               # Python script for EDA (as provided previously)
-│   └── ai_agent.py                 # Python script for the LLM-powered agent logic
-├── n8n_workflow/
-│   └── product_review_agent_workflow.json # Exported n8n workflow
+├── eda_script.py               # Python script for EDA (as provided previously)
+|─ ai_agent.py                 # Python script for the LLM-powered agent logic
 ├── outputs/
 │   └── analyzed_reviews.csv        # Example output of processed reviews
 │   └── overall_rating_distribution.html # Example HTML output for overall rating plot
@@ -72,7 +69,8 @@ The project operates in several stages:
 │   └── product_[ID]_sentiment_distribution.html # Example HTML output for specific product sentiment plot
 │   └── product_[ID]_word_count_vs_rating.html # Example HTML output for word count vs rating scatter plot
 │   └── product_[ID]_avg_rating_over_time.html # Example HTML output for average rating over time plot
-├── Dockerfile                      # (Optional) For containerizing the Python agent
+│   └── product_[ID]_review_length_boxplot.png # Example PNG output for review length boxplot
+│   └── product_[ID]_wordcloud.png # Example PNG output for the word cloud
 ├── requirements.txt                # Python dependencies
 └── README.md                       # This file
 
@@ -87,8 +85,12 @@ To set up and run this project locally:
     cd product-review-ai-agent
     ```
 2.  **Prepare Data:**
-    * Download your `amazon_product_reviews.csv` (or similar review dataset) and place it in the `data/` directory.
-    * **_Important_**: Verify and adjust the column names in `eda_script.py` and `ai_agent.py` to match your dataset's headers.
+    * **Download Dataset:** The project utilizes a dataset of Amazon product reviews.
+        * Go to the Kaggle dataset page: [https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews)
+        * Download the `Reviews.csv` file (or the full dataset archive and extract `Reviews.csv`).
+        * Rename the downloaded file to `amazon_product_reviews.csv`.
+        * Place this `amazon_product_reviews.csv` file into the `data/` directory of this project.
+    * **_Important_**: Verify and adjust the column names in `eda_script.py` and `ai_agent.py` to match your dataset's headers. The current scripts expect `Text`, `Score`, `Summary`, and `Time`.
 3.  **Python Environment Setup:**
     ```bash
     pip install -r requirements.txt
@@ -98,7 +100,7 @@ To set up and run this project locally:
         ```bash
         python scripts/eda_script.py
         ```
-    * The script will generate several `.html` files (for interactive Plotly charts) and display Matplotlib plots (for box plots and word clouds) in your environment's default plot viewer.
+    * The script will generate several `.html` files (for interactive Plotly charts) and `.png` files (for static Matplotlib plots like box plots and word clouds) within the `outputs/` directory.
     * **To view the interactive plots**, open the generated `.html` files in your web browser (e.g., `outputs/overall_rating_distribution.html`).
 5.  **Configure LLM:**
     * If using local LLMs, ensure you have the models downloaded and configured as per the `ai_agent.py` script's instructions.
